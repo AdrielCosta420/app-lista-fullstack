@@ -1,5 +1,6 @@
-import '../shared/widgets/user_image_button.dart';
+import 'package:app_listinha/src/home/widgets/custom_drawer.dart';
 import 'package:flutter/material.dart';
+import '../shared/widgets/user_image_button.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -12,34 +13,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: NavigationDrawer(
-        children: [
-          Padding(
-            padding: const EdgeInsets.fromLTRB(16, 28, 16, 16),
-            child: Text(
-              'Opções',
-              style: Theme.of(context).textTheme.titleMedium,
-            ),
-          ),
-          NavigationDrawerDestination(
-            icon: const Icon(Icons.sync),
-            label: Row(
-              children: [
-                const Text('Sincronizar'),
-                const SizedBox(
-                  width: 25,
-                ),
-                Text('16/02/2023 às 14:34',
-                    style: Theme.of(context).textTheme.bodySmall),
-              ],
-            ),
-          ),
-          const NavigationDrawerDestination(
-            icon: Icon(Icons.settings),
-            label: Text('Configurações'),
-          ),
-        ],
-      ),
+      drawer: const CustomDrawer(),
       appBar: AppBar(
         title: const Text('LISTINHA'),
         actions: const [
@@ -53,7 +27,7 @@ class _HomePageState extends State<HomePage> {
         child: Column(
           children: [
             Padding(
-              padding: const EdgeInsets.all(12.0),
+              padding: const EdgeInsets.all(12),
               child: SegmentedButton<int>(
                 segments: const [
                   ButtonSegment(
@@ -73,7 +47,7 @@ class _HomePageState extends State<HomePage> {
                     label: Text('Desativadas'),
                   ),
                 ],
-                selected: const {3},
+                selected: const {0},
                 onSelectionChanged: (values) {},
               ),
             )
@@ -82,8 +56,10 @@ class _HomePageState extends State<HomePage> {
       ),
       floatingActionButton: FloatingActionButton.extended(
         icon: const Icon(Icons.edit),
-        label: const Text('nova lista'),
-        onPressed: () {},
+        label: const Text('Nova Lista'),
+        onPressed: () {
+          Navigator.of(context).pushNamed('/edit');
+        },
       ),
     );
   }

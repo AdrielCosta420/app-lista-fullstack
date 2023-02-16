@@ -6,10 +6,11 @@ class UserImageButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CircleAvatar(
-        backgroundColor: Theme.of(context).primaryColor,
-        foregroundColor: Colors.white,
-        child: const Text(
-          'A',
-        ));
+      backgroundColor: Theme.of(context).primaryColor,
+      foregroundColor: Colors.white,
+      child: const Text(
+        'A',
+      ),
+    );
   }
 }
