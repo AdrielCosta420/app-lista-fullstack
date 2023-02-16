@@ -1,5 +1,4 @@
 part of 'themes.dart';
-import 'package:flutter/material.dart';
 
 const _lightColorScheme = ColorScheme(
   brightness: Brightness.light,

@@ -2,8 +2,5 @@ import 'package:app_listinha/app_widget.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const AppWidget ());
+  runApp(const AppWidget());
 }
-
-
-
